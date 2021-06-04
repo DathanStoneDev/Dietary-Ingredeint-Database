@@ -4,7 +4,7 @@ public class DietaryIngredients {
     private int id;
     private String name;
     private String role;
-
+    //getters and setters
     public int getId() {
         return id;
     }

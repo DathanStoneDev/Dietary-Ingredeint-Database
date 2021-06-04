@@ -7,7 +7,7 @@ public class Manufacturers {
     private String name;
     private String country;
     private String phone;
-
+    //getters and setters
     public String getName() {
         return name;
     }

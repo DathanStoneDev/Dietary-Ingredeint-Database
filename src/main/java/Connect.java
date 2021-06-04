@@ -5,22 +5,22 @@ import java.util.ResourceBundle;
 
 public class Connect {
 
-    //Dietary_Ingredients table constants
+    //Dietary_Ingredients table constants.
     public static final String TABLE_IN = "Dietary_Ingredients";
     public static final String COLUMN_ID_IN = "IngredientID";
     public static final String COLUMN_NAME_IN = "IngredientName";
     public static final String COLUMN_ROLE_IN = "IngredientRole";
 
-    //Manufacturers table constants
-    private String TABLE_MF = "Manufacturers";
-    private String COLUMN_NAME_MF = "ManufacturerName";
-    private String COLUMN_COUNTRY_MF = "Country";
-    private String COLUMN_PHONE_NUM_MF = "PhoneNUmber";
+    //Manufacturers table constants.
+    public static final String TABLE_MF = "Manufacturers";
+    public static final String COLUMN_NAME_MF = "ManufacturerName";
+    public static final String COLUMN_COUNTRY_MF = "Country";
+    public static final String COLUMN_PHONE_NUM_MF = "PhoneNUmber";
 
-    //connection variable
+    //connection variable.
     private Connection conn;
-    //Connects to database
 
+    //Connects to database.
     public Connection getConnection() {
         ResourceBundle reader;
         reader = ResourceBundle.getBundle("database");
@@ -31,7 +31,7 @@ public class Connect {
             System.out.println("Couldn't connect to the database: " + e.getMessage());
         } return conn;
     }
-    //get a list of all ingredients in table
+    //Creates a list of all ingredients in the Ingredients table.
     public List<DietaryIngredients> queryIngredients() {
         String sql = "SELECT * FROM " + TABLE_IN;
 
@@ -54,7 +54,7 @@ public class Connect {
         }
         return null;
     }
-
+    //Creates a list of all manufacturers in the Manufacturers table.
     public List<Manufacturers> queryManufacturers() {
 
         String sql = "SELECT * FROM " + TABLE_MF;
