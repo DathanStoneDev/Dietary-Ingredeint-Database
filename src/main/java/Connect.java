@@ -32,6 +32,17 @@ public class Connect {
             System.out.println("Couldn't connect to the database: " + e.getMessage());
         } return conn;
     }
+
+    public Connection close() {
+        try {
+            if(conn != null) {
+                conn.close();
+                System.out.println("Connection has been closed.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Cannot close connection: " + e.getMessage());
+        } return null;
+    }
     //Creates a list of all ingredients in the Ingredients table.
     public List<DietaryIngredients> queryIngredients() {
         String sql = "SELECT * FROM " + TABLE_IN;
