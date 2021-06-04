@@ -2,6 +2,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class Connect {
 
@@ -78,5 +79,23 @@ public class Connect {
             System.out.println("Query Failed: " + e.getMessage());
         }
         return null;
+    }
+    //Takes user input to add an ingredient record.
+    public void insertIngredient(String name, String role) {
+
+        String sql = "INSERT INTO " + TABLE_IN + " (" + COLUMN_NAME_IN + "," + COLUMN_ROLE_IN + ")"
+                + "VALUES (? , ?)";
+
+        try(PreparedStatement statement = conn.prepareStatement(sql);) {
+
+            statement.setString(1, name);
+            statement.setString(2, role);
+            statement.executeUpdate();
+
+            System.out.println("Ingredient has been added!");
+
+        } catch (SQLException e) {
+            System.out.println("Could not make the insert: " + e.getMessage());
+        }
     }
 }

@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -24,5 +25,12 @@ public class Main {
             System.out.println("Name = " + manufacturer.getName() + ", Country = " + manufacturer.getCountry() + ", Phone = " + manufacturer.getPhone());
         }
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your Ingredient name: ");
+        String name = scanner.nextLine();
+        System.out.println("Please enter the Ingredient role: ");
+        String role = scanner.nextLine();
+
+        connect.insertIngredient(name, role);
    }
 }

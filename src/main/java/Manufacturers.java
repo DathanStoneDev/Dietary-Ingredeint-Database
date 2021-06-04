@@ -1,7 +1,3 @@
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Manufacturers {
 
     private String name;
