@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class Manufacturers {
+/* public class Manufacturers {
 
     private String TABLE_NAME = "Manufacturers";
     private String COLUMN_NAME = "ManufacturerName";
@@ -44,4 +44,4 @@ public class Manufacturers {
             System.out.println("Could not make the updates: " + e.getMessage());
         }
     }
-}
+} */

@@ -1,9 +1,18 @@
+import java.util.List;
+
 public class Main {
 
     public static void main(String args[]) {
-        DietaryIngredients d1 = new DietaryIngredients();
-        Manufacturers m1 = new Manufacturers();
-        m1.insertQueryManufacturers();
+       Connect connect = new Connect();
+       connect.getConnection();
 
-    }
+       List<DietaryIngredients> ingredients = connect.queryIngredients();
+       if(ingredients == null) {
+           System.out.println("No Ingredients!");
+           return;
+       }
+        for(DietaryIngredients ingredient : ingredients) {
+            System.out.println("ID = " + ingredient.getId() + ", Name = " + ingredient.getName() + ", Role = " + ingredient.getRole());
+        }
+   }
 }
