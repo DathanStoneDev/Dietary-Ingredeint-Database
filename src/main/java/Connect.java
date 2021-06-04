@@ -5,11 +5,19 @@ import java.util.ResourceBundle;
 
 public class Connect {
 
-
+    //Dietary_Ingredients table constants
     public static final String TABLE_IN = "Dietary_Ingredients";
     public static final String COLUMN_ID_IN = "IngredientID";
     public static final String COLUMN_NAME_IN = "IngredientName";
     public static final String COLUMN_ROLE_IN = "IngredientRole";
+
+    //Manufacturers table constants
+    private String TABLE_MF = "Manufacturers";
+    private String COLUMN_NAME_MF = "ManufacturerName";
+    private String COLUMN_COUNTRY_MF = "Country";
+    private String COLUMN_PHONE_NUM_MF = "PhoneNUmber";
+
+    //connection variable
     private Connection conn;
     //Connects to database
 
@@ -40,6 +48,31 @@ public class Connect {
             }
 
             return ingredients;
+
+        } catch (SQLException e) {
+            System.out.println("Query Failed: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Manufacturers> queryManufacturers() {
+
+        String sql = "SELECT * FROM " + TABLE_MF;
+
+        try (Statement statement = conn.createStatement();
+             ResultSet results = statement.executeQuery(sql)){
+
+
+            List<Manufacturers> manufacturers = new ArrayList<>();
+            while (results.next()) {
+                Manufacturers manufacturer = new Manufacturers();
+                manufacturer.setName(results.getString(COLUMN_NAME_MF));
+                manufacturer.setCountry(results.getString(COLUMN_COUNTRY_MF));
+                manufacturer.setPhone(results.getString(COLUMN_PHONE_NUM_MF));
+                manufacturers.add(manufacturer);
+            }
+
+            return manufacturers;
 
         } catch (SQLException e) {
             System.out.println("Query Failed: " + e.getMessage());
