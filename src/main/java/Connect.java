@@ -2,7 +2,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Scanner;
+
 
 public class Connect {
 
@@ -32,7 +32,7 @@ public class Connect {
             System.out.println("Couldn't connect to the database: " + e.getMessage());
         } return conn;
     }
-
+    //closes database
     public Connection close() {
         try {
             if(conn != null) {
@@ -104,6 +104,25 @@ public class Connect {
             statement.executeUpdate();
 
             System.out.println("Ingredient has been added!");
+
+        } catch (SQLException e) {
+            System.out.println("Could not make the insert: " + e.getMessage());
+        }
+    }
+    //takes user input to add a manufacturer
+    public void insertManufacturer(String name, String country, String phone) {
+
+        String sql = "INSERT INTO " + TABLE_MF + " (" + COLUMN_NAME_MF + "," + COLUMN_COUNTRY_MF + "," + COLUMN_PHONE_NUM_MF + ")"
+                + "VALUES (? , ?)";
+
+        try(PreparedStatement statement = conn.prepareStatement(sql);) {
+
+            statement.setString(1, name);
+            statement.setString(2, country);
+            statement.setString(3, phone);
+            statement.executeUpdate();
+
+            System.out.println("Manufacturer has been added!");
 
         } catch (SQLException e) {
             System.out.println("Could not make the insert: " + e.getMessage());
