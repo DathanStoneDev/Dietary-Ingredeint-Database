@@ -11,22 +11,29 @@ public class Main {
         System.out.println("2. Enter a new Manufacturer into the database.");
         System.out.println("3. Get a list of all Ingredients in the database.");
         System.out.println("4. Get a list of all Manufacturers in the database.");
-        System.out.println("5. Exit");
+        System.out.println("Press any number above '4' to exit.");
         System.out.println("-----------------------------------------------------");
         int answer = scanner1.nextInt();
 
-        switch (answer) {
-            case 1: addIngredient();
-                break;
-            case 2: addManufacturer();
-                break;
-            case 3: listIngredients();
-                break;
-            case 4: listManufacturers();
-                break;
-            default: System.out.println("Invalid Selection.");
+        while (answer < 5) {
+            switch (answer) {
+                case 1: addIngredient();
+                        break;
+                case 2: addManufacturer();
+                        break;
+                case 3: listIngredients();
+                        break;
+                case 4: listManufacturers();
+                        break;
+            }
+            System.out.println("Please select your next action.");
+            System.out.println("1. Enter a new Ingredient into the database.");
+            System.out.println("2. Enter a new Manufacturer into the database.");
+            System.out.println("3. Get a list of all Ingredients in the database.");
+            System.out.println("4. Get a list of all Manufacturers in the database.");
+            System.out.println("Press any number above '4' to exit.");
+            answer = scanner1.nextInt();
         }
-
     }
     //adds an ingredient to the database.
     public static void addIngredient() {
@@ -77,7 +84,7 @@ public class Main {
         connect.getConnection();
         List<Manufacturers> manufacturers = connect.queryManufacturers();
         if(manufacturers == null) {
-            System.out.println("No Ingredients!");
+            System.out.println("No Manufacturers!");
             return;
         }
         for(Manufacturers manufacturer : manufacturers) {
