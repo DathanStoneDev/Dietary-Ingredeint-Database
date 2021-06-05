@@ -97,7 +97,7 @@ public class Connect {
         String sql = "INSERT INTO " + TABLE_IN + " (" + COLUMN_NAME_IN + "," + COLUMN_ROLE_IN + ")"
                 + "VALUES (? , ?)";
 
-        try(PreparedStatement statement = conn.prepareStatement(sql);) {
+        try(PreparedStatement statement = conn.prepareStatement(sql)) {
 
             statement.setString(1, name);
             statement.setString(2, role);
@@ -113,9 +113,9 @@ public class Connect {
     public void insertManufacturer(String name, String country, String phone) {
 
         String sql = "INSERT INTO " + TABLE_MF + " (" + COLUMN_NAME_MF + "," + COLUMN_COUNTRY_MF + "," + COLUMN_PHONE_NUM_MF + ")"
-                + "VALUES (? , ?)";
+                + "VALUES (? , ?, ?)";
 
-        try(PreparedStatement statement = conn.prepareStatement(sql);) {
+        try(PreparedStatement statement = conn.prepareStatement(sql)) {
 
             statement.setString(1, name);
             statement.setString(2, country);
@@ -126,6 +126,38 @@ public class Connect {
 
         } catch (SQLException e) {
             System.out.println("Could not make the insert: " + e.getMessage());
+        }
+    }
+
+    public void updateManufacturerPhone (String phone, String name) {
+
+        String sql = "UPDATE " + TABLE_MF + " SET " + COLUMN_PHONE_NUM_MF + " = ? WHERE " + COLUMN_NAME_MF + " = ?";
+
+        try(PreparedStatement statement = conn.prepareStatement(sql)) {
+
+            statement.setString(1, phone);
+            statement.setString(2, name);
+            statement.executeUpdate();
+
+            System.out.println("Update has been executed!");
+        } catch (SQLException e) {
+            System.out.println("Could not make the update: " + e.getMessage());
+        }
+    }
+
+    public void updateIngredientRole (String role, String name) {
+
+        String sql = "UPDATE " + TABLE_IN + " SET " + COLUMN_ROLE_IN + " = ? WHERE " + COLUMN_NAME_IN + " = ?";
+
+        try(PreparedStatement statement = conn.prepareStatement(sql)) {
+
+            statement.setString(1, role);
+            statement.setString(2, name);
+            statement.executeUpdate();
+
+            System.out.println("Update has been executed!");
+        } catch (SQLException e) {
+            System.out.println("Could not make the update: " + e.getMessage());
         }
     }
 }
