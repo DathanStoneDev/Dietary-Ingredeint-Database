@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Press any number above '6' to exit.");
         System.out.println("-----------------------------------------------------");
         int answer = scanner1.nextInt();
-
+        //loops until number above cases is hit.
         while (answer < 7) {
             switch (answer) {
                 case 1: addIngredient();
@@ -101,7 +101,7 @@ public class Main {
         }
         connect.close();
     }
-
+    //updates a manufacturer's phone number
     public static void manufacturerUpdate() {
         Connect connect = new Connect();
         connect.getConnection();
@@ -114,7 +114,7 @@ public class Main {
         connect.updateManufacturerPhone(phone, name);
         connect.close();
     }
-
+    //updates the role of an ingredient. Will update all ingredients that have the same name.
     public static void ingredientUpdate() {
         Connect connect = new Connect();
         connect.getConnection();

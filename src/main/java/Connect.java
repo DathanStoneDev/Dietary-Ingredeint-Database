@@ -128,7 +128,7 @@ public class Connect {
             System.out.println("Could not make the insert: " + e.getMessage());
         }
     }
-
+    //updates a manufacturer's phone number.
     public void updateManufacturerPhone (String phone, String name) {
 
         String sql = "UPDATE " + TABLE_MF + " SET " + COLUMN_PHONE_NUM_MF + " = ? WHERE " + COLUMN_NAME_MF + " = ?";
@@ -144,7 +144,7 @@ public class Connect {
             System.out.println("Could not make the update: " + e.getMessage());
         }
     }
-
+    //updates an ingredient's role
     public void updateIngredientRole (String role, String name) {
 
         String sql = "UPDATE " + TABLE_IN + " SET " + COLUMN_ROLE_IN + " = ? WHERE " + COLUMN_NAME_IN + " = ?";
