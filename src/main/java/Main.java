@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
+        //menu.
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Hello! Please choose an option on the menu by typing the number in.");
         System.out.println("1. Enter a new Ingredient into the database.");
@@ -41,7 +41,7 @@ public class Main {
         connect.insertIngredient(name, role);
         connect.close();
     }
-
+    //adds a manufacturer to the database.
     public static void addManufacturer() {
         Connect connect = new Connect();
         connect.getConnection();
@@ -71,7 +71,7 @@ public class Main {
         }
         connect.close();
     }
-
+    //gets a list off all manufacturers from the database.
     public static void listManufacturers () {
         Connect connect = new Connect();
         connect.getConnection();
@@ -86,4 +86,3 @@ public class Main {
         connect.close();
     }
 }
-/*connect.close in the methods */
