@@ -10,7 +10,7 @@ Languages: Java, SQL, T-SQL
 Database: Azure SQL Database,
 API: JBDC 9.2.1,
 Project Setup: Maven,
-IDE: IntelliJ Ultimate
+IDE: IntelliJ Ultimate, Azure Visual Studio
 
 ## Set-up
 
