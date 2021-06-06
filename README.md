@@ -42,7 +42,19 @@ private Connection conn;
 ## Usage
 
 Below is a screenshot of the console program working. A menu pops up at the start and prompts the user to choose an option. The option chosen here was option "1". This prompts the addRecord method to start. User input is taken one step at the time and if everything passes, confirmation messages are shown and resources are closed. The menu will pop up again so the user can make another selection, or they may type a number larger than 6 to exit the application.
+
 ![image](https://user-images.githubusercontent.com/73630546/120914377-d4847300-c652-11eb-99c5-bd65574c792b.png)
 
+## Entity Diagram
+
+Below is the database design for this application.
+
+![Untitled Diagram(1)](https://user-images.githubusercontent.com/73630546/120915073-a3a63d00-c656-11eb-900f-4cbb0b1ce5c3.png)
+
+## Future of the Project and Reflection.
+
+Like I said before, this is just the begining. This project was created as a learning experience for me and taught me alot about OOP and databases. I was exposed to Azure (Would recommend!) and completely peaked my interests further into databases, architecture and cloud computing. This is absolutely a project that I will continute to develop as I grow as a software engineer. I plan to make this a full web application, most likely using the Spring Framework (Spring Boot).
+
+Thanks for checking this out!
 
 
