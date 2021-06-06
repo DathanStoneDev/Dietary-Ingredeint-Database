@@ -4,6 +4,7 @@ public class Manufacturers {
     private String name;
     private String country;
     private String phone;
+    private int id;
     //getters and setters
     public String getName() {
         return name;
@@ -27,5 +28,13 @@ public class Manufacturers {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -7,45 +7,41 @@ public class Main {
         //menu.
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Hello! Please choose an option on the menu by typing the number in.");
-        System.out.println("1. Enter a new Ingredient into the database.");
-        System.out.println("2. Enter a new Manufacturer into the database.");
-        System.out.println("3. Get a list of all Ingredient data in the database.");
-        System.out.println("4. Get a list of all Manufacturer data in the database.");
-        System.out.println("5. Update a manufacturer's phone number");
-        System.out.println("6. Update an ingredient's role");
+        System.out.println("1. Enter a new record into the database");
+        System.out.println("2. Get a list of all Ingredient data in the database.");
+        System.out.println("3. Get a list of all Manufacturer data in the database.");
+        System.out.println("4. Update a manufacturer's phone number");
+        System.out.println("5. Update an ingredient's role");
         System.out.println("Press any number above '6' to exit.");
         System.out.println("-----------------------------------------------------");
         int answer = scanner1.nextInt();
         //loops until number above cases is hit.
         while (answer < 7) {
             switch (answer) {
-                case 1: addIngredient();
+                case 1: addRecord();
                         break;
-                /*case 2: addManufacturer();
-                        break;*/
-                case 3: listIngredients();
+                case 2: listIngredients();
                         break;
-                case 4: listManufacturers();
+                case 3: listManufacturers();
                         break;
-                case 5: manufacturerUpdate();
+                case 4: manufacturerUpdate();
                         break;
-                case 6: ingredientUpdate();
+                case 5: ingredientUpdate();
                         break;
             }
             System.out.println("-----------------------------------------------------");
             System.out.println("Please select your next action.");
-            System.out.println("1. Enter a new Ingredient into the database.");
-            System.out.println("2. Enter a new Manufacturer into the database.");
-            System.out.println("3. Get a list of all Ingredient data in the database.");
-            System.out.println("4. Get a list of all Manufacturer data in the database.");
-            System.out.println("5. Update a manufacturer's phone number");
-            System.out.println("6. Update an ingredient's role");
+            System.out.println("1. Enter a new record into the database");
+            System.out.println("2. Get a list of all Ingredient data in the database.");
+            System.out.println("3. Get a list of all Manufacturer data in the database.");
+            System.out.println("4. Update a manufacturer's phone number");
+            System.out.println("5. Update an ingredient's role");
             System.out.println("Press any number above '6' to exit.");
             answer = scanner1.nextInt();
         }
     }
-    //adds an ingredient to the database.
-    public static void addIngredient() {
+    //Adds a record to the database
+    public static void addRecord() {
         Connect connect = new Connect();
         connect.getConnection();
         Scanner scanner2 = new Scanner(System.in);
@@ -60,24 +56,9 @@ public class Main {
         System.out.println("Please enter the Manufacturer's phone number: ");
         String phone = scanner2.nextLine();
 
-        connect.insertIngredient(inName, role, manName, country, phone);
+        connect.insertRecord(inName, role, manName, country, phone);
         connect.close();
     }
-    //adds a manufacturer to the database.
-   /* public static void addManufacturer() {
-        Connect connect = new Connect();
-        connect.getConnection();
-        Scanner scanner3 = new Scanner(System.in);
-        System.out.println("Please enter your Manufacturer's name: ");
-        String name = scanner3.nextLine();
-        System.out.println("Please enter the Manufacturer's country: ");
-        String country = scanner3.nextLine();
-        System.out.println("Please enter the Manufacturer's phone number: ");
-        String phone = scanner3.nextLine();
-
-        connect.insertManufacturer(name, country, phone);
-        connect.close();
-    } */
 
     //gets a list of all ingredients from the database.
     public static void listIngredients() {
@@ -89,7 +70,7 @@ public class Main {
             return;
         }
         for(DietaryIngredients ingredient : ingredients) {
-            System.out.println("ID = " + ingredient.getId() + ", Name = " + ingredient.getName() + ", Role = " + ingredient.getRole());
+            System.out.println("ID = " + ingredient.getId() + ", Name = " + ingredient.getName() + ", Role = " + ingredient.getRole() + ", ManufacturerID = " + ingredient.getManId());
         }
         connect.close();
     }
@@ -103,7 +84,7 @@ public class Main {
             return;
         }
         for(Manufacturers manufacturer : manufacturers) {
-            System.out.println("Name = " + manufacturer.getName() + ", Country = " + manufacturer.getCountry() + ", Phone = " + manufacturer.getPhone());
+            System.out.println("Name = " + manufacturer.getName() + ", Country = " + manufacturer.getCountry() + ", Phone = " + manufacturer.getPhone() + ", ManufacturerID = " + manufacturer.getId());
         }
         connect.close();
     }
