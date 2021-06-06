@@ -22,7 +22,7 @@ A blank maven project was created to manage the dependecy of the JBDC.
      <version>9.2.1.jre11</version>
 </dependency>
 ```
-Connection to the database: Therce bundler is used here because a properties file was created to manage enviroment variables that can be passed into the
+Connection to the database: The resource bundler is used here because a properties file was created to manage enviroment variables that can be passed into the
 connection method. This way the properties file can be ignored via .gitignore.
 ```
 private Connection conn;
