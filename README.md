@@ -39,4 +39,10 @@ private Connection conn;
     }
 ```
 
+## Usage
+
+Below is a screenshot of the console program working. A menu pops up at the start and prompts the user to choose an option. The option chosen here was option "1". This prompts the addRecord method to start. User input is taken one step at the time and if everything passes, confirmation messages are shown and resources are closed. The menu will pop up again so the user can make another selection, or they may type a number larger than 6 to exit the application.
+![image](https://user-images.githubusercontent.com/73630546/120914377-d4847300-c652-11eb-99c5-bd65574c792b.png)
+
+
 
