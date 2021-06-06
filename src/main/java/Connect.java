@@ -95,6 +95,9 @@ public class Connect {
         }
         return null;
     }
+    //returns a full record - may need to create another class
+    /*public List<>*/
+
     //Takes user input to add an ingredient record.
     public void insertRecord(String inName, String role, String manName, String country, String phone) {
         //prepared sql statements
@@ -171,6 +174,24 @@ public class Connect {
             System.out.println("Update has been executed!");
         } catch (SQLException e) {
             System.out.println("Could not make the update: " + e.getMessage());
+        }
+    }
+
+    //Deletes a record from the database. .
+    public void deleteRecord(int id) {
+
+        String sql = "DELETE FROM " + TABLE_IN + " WHERE " + COLUMN_ID_IN + " = ?";
+
+        try(PreparedStatement statement = conn.prepareStatement(sql)) {
+
+            statement.setInt(1, id);
+            statement.executeUpdate();
+
+            System.out.println("Record has been deleted!");
+
+
+        } catch (SQLException e) {
+            System.out.println("Record could not be deleted: " + e.getMessage());
         }
     }
 }

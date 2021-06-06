@@ -114,4 +114,15 @@ public class Main {
         connect.updateIngredientRole(role, name);
         connect.close();
     }
+
+    public static void recordDeletion() {
+        Connect connect = new Connect();
+        connect.getConnection();
+        Scanner scanner6 = new Scanner(System.in);
+        System.out.println("Please enter the Ingredient's ID that will have their record deleted");
+        int id = scanner6.nextInt();
+
+        connect.deleteRecord(id);
+        connect.close();
+    }
 }
