@@ -21,8 +21,8 @@ public class Main {
             switch (answer) {
                 case 1: addIngredient();
                         break;
-                case 2: addManufacturer();
-                        break;
+                /*case 2: addManufacturer();
+                        break;*/
                 case 3: listIngredients();
                         break;
                 case 4: listManufacturers();
@@ -50,15 +50,21 @@ public class Main {
         connect.getConnection();
         Scanner scanner2 = new Scanner(System.in);
         System.out.println("Please enter your Ingredient name: ");
-        String name = scanner2.nextLine();
+        String inName = scanner2.nextLine();
         System.out.println("Please enter the Ingredient role: ");
         String role = scanner2.nextLine();
+        System.out.println("Please enter the Manufacturer's name: ");
+        String manName = scanner2.nextLine();
+        System.out.println("Please enter the Manufacturer's country: ");
+        String country = scanner2.nextLine();
+        System.out.println("Please enter the Manufacturer's phone number: ");
+        String phone = scanner2.nextLine();
 
-        connect.insertIngredient(name, role);
+        connect.insertIngredient(inName, role, manName, country, phone);
         connect.close();
     }
     //adds a manufacturer to the database.
-    public static void addManufacturer() {
+   /* public static void addManufacturer() {
         Connect connect = new Connect();
         connect.getConnection();
         Scanner scanner3 = new Scanner(System.in);
@@ -71,7 +77,7 @@ public class Main {
 
         connect.insertManufacturer(name, country, phone);
         connect.close();
-    }
+    } */
 
     //gets a list of all ingredients from the database.
     public static void listIngredients() {
