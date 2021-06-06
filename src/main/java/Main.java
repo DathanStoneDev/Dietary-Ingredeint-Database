@@ -16,7 +16,7 @@ public class Main {
         System.out.println("-----------------------------------------------------");
         int answer = scanner1.nextInt();
         //loops until number above cases is hit.
-        while (answer < 7) {
+        while (answer < 6) {
             switch (answer) {
                 case 1: addRecord();
                         break;
