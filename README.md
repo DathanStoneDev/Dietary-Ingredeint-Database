@@ -2,7 +2,7 @@
 
 This is a personal project of mine that is really just the begining. I've worked in the Dietary Supplements industry for 2 years and one challange
 that many of these companies face is a database that can hold all their ingredient information. Often, all their documents are stored in messy
-folders all over 15 different drives. As a budding software engineer, I thought this would be a great start to something I hope to expand upon.
+folders all over 15 different drives. As a budding software engineer, I thought this would be a great start to get my hands dirty with the JBDC and databases.
 
 ## Technologies
 
