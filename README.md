@@ -7,8 +7,7 @@ folders all over 15 different drives. As a budding software engineer, I thought 
 ## Technologies
 
 Languages: Java, SQL, T-SQL  
-Database: Azure SQL Database    
-API: JBDC 9.2.1    
+Database: Azure SQL Database       
 Project Setup: Maven  
 IDE: IntelliJ Ultimate, Azure Visual Studio  
 
@@ -53,7 +52,7 @@ Below is the database design for this application.
 
 ## Future of the Project and Reflection.
 
-Like I said before, this is just the begining. This project was created as a learning experience for me and taught me alot about OOP and databases. I was exposed to Azure (Would recommend!) and completely peaked my interests further into databases, architecture and cloud computing. This is absolutely a project that I will continue to develop as I grow as a software engineer. I plan to make this a full web application, most likely using the Spring Framework (Spring Boot) and cloud storage.
+Like I said before, this is just the begining. This project was created as a learning experience for me and taught me alot about OOP and databases. I was exposed to Azure (Would recommend!) and completely peaked my interests further into databases, architecture and cloud computing. This is absolutely a project that I will continue to develop as I grow as a software engineer. I plan to make this a full web application, most likely using the Spring Framework (Spring Boot).
 
 Thanks for checking this out!
 
